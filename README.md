@@ -1,5 +1,7 @@
 # Kotlin
 
+<img src="https://github.com/guoxiaoxing/kotlin/raw/master/art/kotlin_banner.png"/>
+
 作者: 郭孝星  
 邮箱: guoxiaoxingse@163.com  
 博客: http://blog.csdn.net/allenwells   
