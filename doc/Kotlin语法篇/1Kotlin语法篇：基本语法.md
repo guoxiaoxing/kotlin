@@ -97,11 +97,24 @@ val i: Int = b.toInt() // OK: explicitly widened
 - toDouble(): Double
 - toChar(): Char
 
-### Characters
-Kotlin中的字符串是由一个个字符Char组成
+### Char
+
+Kotlin里的字符用Char来表示
 
 
+### String
 
+Kotlin里的字符串用String来表示
+
+创建String，还可以用in表达式迭代字符串里的字符
+
+```java
+val str = "Hello, world!\n"
+
+for (c in str) {
+    println(c)
+}
+```
 
 ### Booleans
 
@@ -109,19 +122,64 @@ Kotlin中的字符串是由一个个字符Char组成
 
 ### Array
 
-Kotlin中的数组用Array表示。
+Kotlin中的数组用Array表示，Array有一个set方法与get方法以及一个iterator。
+
+```java
+class Array<T> private constructor() {
+    val size: Int
+    operator fun get(index: Int): T
+    operator fun set(index: Int, value: T): Unit
+
+    operator fun iterator(): Iterator<T>
+    // ...
+}
+```
 
 创建数组
 
 ```java
+// Creates an Array<String> with values ["0", "1", "4", "9", "16"]
+val asc = Array(5, { i -> (i * i).toString() })
+
+// Get element from array
+asc[0]
+asc.get(0)
+```
+我们还可以创建特定类型的数组，例如：ByteArray, ShortArray, IntArray
+
+```java
+val x: IntArray = intArrayOf(1, 2, 3)
+x[0] = x[1] + x[2]
 ```
 
 ## 语句
 
-in关键字
+Kotlin提供了很多有趣的关键字与表达式，它们使得语法更加简便。
+
+### in
 
 判断一个对象是否在某一个区间内，可以使用in关键字
 
 ```java
 for()
+```
+### $
+
+美元符可以在字符串中引用变量的值。
+
+```java
+al i = 10
+val s = "i = $i" // evaluates to "i = 10"
+
+val s = "abc"
+val str = "$s.length is ${s.length}" // evaluates to "abc.length is 3"
+```
+这是个有用的特性
+
+## if语句
+
+if语句和Java相比没有太大变化，可以用{}标明代码块，也可以不写。
+
+```java
+
 ```

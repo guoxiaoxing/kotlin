@@ -27,7 +27,7 @@ Android Stduio 3.0已经正式支持Kotlin，如果你是第一次接触Kotlin�
 
 文章目录
 
-- [1Kotlin语法篇：基本语法]()
+- [1Kotlin语法篇：基本语法](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin%E8%AF%AD%E6%B3%95%E7%AF%87/1Kotlin语法篇：基本语法.md)
 
 
 # 附录
