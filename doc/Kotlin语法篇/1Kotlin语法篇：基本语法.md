@@ -156,14 +156,32 @@ x[0] = x[1] + x[2]
 
 Kotlin提供了很多有趣的关键字与表达式，它们使得语法更加简便。
 
-### in
+### in关键字
 
 判断一个对象是否在某一个区间内，可以使用in关键字
 
 ```java
-for()
+/如果存在于区间(1,Y-1)，则打印OK
+if (x in 1..y-1) 
+  print("OK")
+
+//如果x不存在于array中，则输出Out
+if (x !in 0..array.lastIndex) 
+  print("Out")
+
+//打印1到5
+for (x in 1..5) 
+  print(x)
+
+//遍历集合(类似于Java中的for(String name : names))
+for (name in names)
+  println(name)
+
+//如果names集合中包含text对象则打印yes
+if (text in names)
+  print("yes")
 ```
-### $
+### $操作符
 
 美元符可以在字符串中引用变量的值。
 
@@ -174,12 +192,257 @@ val s = "i = $i" // evaluates to "i = 10"
 val s = "abc"
 val str = "$s.length is ${s.length}" // evaluates to "abc.length is 3"
 ```
-这是个有用的特性
 
-## if语句
+### ?操作符
+
+Kotlin是空指针安全的，也就是你不用再担心Java中令人头疼的NPE问题。?标明只有当这个值不为空时才执行后续的代码。
+
+```java
+//当data不为空的时候，执行语句块
+data?.let{
+	//... 
+}
+
+//相反的，以下代码当data为空时才会执行
+data?:let{
+	//...
+}
+````
+
+## if表达式
 
 if语句和Java相比没有太大变化，可以用{}标明代码块，也可以不写。
 
 ```java
+// Traditional usage 
+var max = a 
+if (a < b) max = b
 
+// With else 
+var max: Int
+if (a > b) {
+    max = a
+} else {
+    max = b
+}
+ 
+// As expression 
+val max = if (a > b) a else b
 ```
+## when表达式
+
+when表达式相当于Java里的switch表达式，它使用起来更加的灵活方便。它的判断语句结构为：
+
+常量/带返回值的函数 -> 代码块
+
+```java
+when (x) {
+    1 -> print("x == 1")
+    2 -> print("x == 2")
+    else -> { // Note the block
+        print("x is neither 1 nor 2")
+    }
+}
+
+when (x) {
+    0, 1 -> print("x == 0 or x == 1")
+    else -> print("otherwise")
+}
+
+when (x) {
+    parseInt(s) -> print("s encodes x")
+    else -> print("s does not encode x")
+}
+
+when (x) {
+    in 1..10 -> print("x is in the range")
+    in validNumbers -> print("x is valid")
+    !in 10..20 -> print("x is outside the range")
+    else -> print("none of the above")
+}
+
+fun hasPrefix(x: Any) = when(x) {
+    is String -> x.startsWith("prefix")
+    else -> false
+}
+```
+## for表达式
+
+for循环表达式：for (item in collection) print(item)
+
+```java
+for (i in array.indices) {
+    print(array[i])
+}
+
+for ((index, value) in array.withIndex()) {
+    println("the element at $index is $value")
+}
+```
+## While表达式
+
+While表达式同样也支持while与do..while。
+```java
+while (x > 0) {
+    x--
+}
+
+do {
+    val y = retrieveData()
+} while (y != null) // y is visible here!
+```
+### return, break与continue
+
+Kotlin也支持break、continue这些中断循环的语句。
+
+return：退出当前函数
+break：中断内层循环
+continue：中断当前循环，继续下一次循环。
+
+Kotlin同样也支持Java里label标签操作，不仅可以返回到定义的标签处，还可以返回值给标签。
+
+定义标签：labelName@
+返回值给标签：return@a value
+
+```java
+loop@ for (i in 1..100) {
+    for (j in 1..100) {
+        if (...) break@loop
+    }
+}
+
+fun foo() {
+    ints.forEach lit@ {
+        if (it == 0) return@lit
+        print(it)
+    }
+}
+
+fun foo() {
+    ints.forEach {
+        if (it == 0) return@forEach
+        print(it)
+    }
+}
+```
+
+## 函数
+
+### 函数定义
+
+Kotlin中的函数用fun关键字声明。
+
+```java
+//参数x为Int型，返回值为Int型
+fun double(x: Int): Int {
+}
+
+//可以省略{}
+fun double(x: Int): Int = x * 2
+
+//返回值类型可以省略，编译器会自动推断返回值类型
+fun double(x: Int) = x * 2
+```
+当一个函数是继承函数（override）、只有一个参数或被infix关键字标记时，可以采用它的简写方式。
+
+```java
+// Define extension to Int
+infix fun Int.shl(x: Int): Int {
+...
+}
+
+// call extension function using infix notation
+
+1 shl 2
+
+// is the same as
+
+1.shl(2)
+```
+
+### 函数参数
+
+函数的参数必须指定类型，且可以赋值默认值，而且函数的调用也非常的灵活，可以传递任意个数的参数给函数，这
+一点雨JavaScript里的函数传参比较相似。
+
+```java
+fun reformat(str: String,
+             normalizeCase: Boolean = true,
+             upperCaseFirstLetter: Boolean = true,
+             divideByCamelHumps: Boolean = false,
+             wordSeparator: Char = ' ') {
+...
+}
+
+//we could call this using default arguments
+reformat(str)
+
+//when calling it with non-default, the call would look something like
+reformat(str, true, true, false, '_')
+
+//we do not need all arguments
+reformat(str, wordSeparator = '_')
+```
+子类中重载的函数要与父类中函数参数类型一直。
+
+```java
+open class A {
+    open fun foo(i: Int = 10) { ... }
+}
+
+class B : A() {
+    override fun foo(i: Int) { ... }  // no default value allowed
+}
+```
+### 函数返回值
+
+如果一个函数没有任何返回值，它会返回一个类型为Unit的返回值。
+
+```java
+fun printHello(name: String?): Unit {
+    if (name != null)
+        println("Hello ${name}")
+    else
+        println("Hi there!")
+    // `return Unit` or `return` is optional
+}
+```
+### Lambda表达式
+
+Kotlin也支持Java新推出的Lambda表达式，这与JavaScript的箭头函数有点相似，说起来也就是一种函数
+的简化写法，有点语法糖的感觉，毕竟对于初学者来说不是很直观。
+
+Lambda表达式：参数 -> 函数体，参数可以省略，即 () -> 函数体。
+
+Lambda表达式主要使用在高阶函数、匿名函数上。
+
+高级函数：高阶函数将函数作为参数传递给本函数。
+
+```java
+fun <T> lock(lock: Lock, body: () -> T): T {
+    lock.lock()
+    try {
+        return body()
+    }
+    finally {
+        lock.unlock()
+    }
+}
+```
+匿名函数
+
+```java
+max(strings, { a, b -> a.length < b.length })
+```
+### 闭包
+
+Lambda表达式或者匿名函数可以访问它范围之外声明的变量。
+
+```java
+var sum = 0
+ints.filter { it > 0 }.forEach {
+    sum += it
+}
+print(sum)
+```
+
