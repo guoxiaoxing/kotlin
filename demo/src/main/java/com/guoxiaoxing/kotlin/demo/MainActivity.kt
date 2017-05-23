@@ -4,7 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.guoxiaoxing.kotlin.demo.datatype.BasicTypeActivity
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.btn_basic_type -> startActivity(Intent(this@MainActivity, BasicTypeActivity::class.java))
+
         }
     }
 }

@@ -16,6 +16,7 @@
 >作者的文章首发在[Github](https://github.com/guoxiaoxing)上，也会发在[简书](http://www.jianshu.com/users/66a47e04215b/latest_articles)与[CSDN](http://blog.csdn.net/allenwells)平台上，文章内容主要包含Android/Linux, Java/Kotlin/JVM，Python, JavaScript/React/ReactNative, 数据结构与算法等方面的内容。如果有什么问题，也欢迎发邮件与我交流。
 
 - [Kotlin官网](https://kotlinlang.org/)
+- [Kotlin官网中文版](https://www.kotlincn.net/)
 - [Kotlin API](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
 
 前段时间的Google IO 2017会议上Google正式宣布Kotlin将作为Android新的开发语言，这是一个振奋人心的消息，Kotlin具备很多现代
