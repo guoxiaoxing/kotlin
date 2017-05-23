@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.iv_properties
 
-import util.TODO
-import util.doc34
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc34
 
 class LazyPropertyUsingDelegates(val initializer: () -> Int) {
     val lazyValue: Int by todoTask34()

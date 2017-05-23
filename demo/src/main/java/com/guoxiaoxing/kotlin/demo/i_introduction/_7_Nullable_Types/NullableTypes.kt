@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._7_Nullable_Types
 
-import util.TODO
-import util.doc7
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc7
 
 fun test() {
     val s: String = "this variable cannot store null references"

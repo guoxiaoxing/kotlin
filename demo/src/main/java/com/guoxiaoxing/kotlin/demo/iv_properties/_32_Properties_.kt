@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.iv_properties
 
-import util.TODO
-import util.doc32
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc32
 
 class PropertyExample() {
     var counter = 0

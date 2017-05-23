@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._6_Data_Classes
 
-import util.TODO
-import util.doc6
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc6
 
 fun todoTask6(): Nothing = TODO(
     """

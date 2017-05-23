@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.iv_properties
 
-import iii_conventions.MyDate
-import util.TODO
+import com.guoxiaoxing.kotlin.demo.iii_conventions.MyDate
+import com.guoxiaoxing.kotlin.demo.util.TODO
 import java.util.*
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty

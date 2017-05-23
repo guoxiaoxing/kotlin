@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._11_SAM_Conversions
 
-import util.TODO
-import util.doc11
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc11
 import java.util.*
 
 fun todoTask11(): Nothing = TODO(

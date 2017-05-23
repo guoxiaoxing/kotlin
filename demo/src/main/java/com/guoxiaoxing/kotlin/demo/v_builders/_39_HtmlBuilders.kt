@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.v_builders
 
-import util.TODO
-import util.doc39
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc39
 import v_builders.data.getProducts
 import v_builders.htmlLibrary.*
 

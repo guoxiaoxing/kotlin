@@ -1,6 +1,6 @@
 package com.guoxiaoxing.kotlin.demo.iii_conventions
 
-import iii_conventions.TimeInterval.*
+import com.guoxiaoxing.kotlin.demo.iii_conventions.TimeInterval.*
 import java.util.*
 
 fun MyDate.nextDay() = addTimeIntervals(DAY, 1)

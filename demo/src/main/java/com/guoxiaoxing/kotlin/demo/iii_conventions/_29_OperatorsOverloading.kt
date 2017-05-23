@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.iii_conventions
 
-import util.TODO
-import iii_conventions.TimeInterval.*
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.iii_conventions.TimeInterval.*
 
 fun todoTask29(): Nothing = TODO(
     """

@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._10_Object_Expressions
 
-import util.TODO
-import util.doc10
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc10
 import java.util.*
 
 fun todoTask10(): Nothing = TODO(

@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._5_String_Templates
 
-import util.TODO
-import util.doc5
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc5
 
 fun example1(a: Any, b: Any) =
         "This is some text in which variables ($a, $b) appear."

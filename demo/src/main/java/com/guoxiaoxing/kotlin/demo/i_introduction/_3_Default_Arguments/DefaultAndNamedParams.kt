@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._3_Default_Arguments
 
-import util.TODO
-import util.doc2
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc2
 
 fun todoTask3(): Nothing = TODO(
     """

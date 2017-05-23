@@ -1,6 +1,6 @@
 package com.guoxiaoxing.kotlin.demo.iv_properties
 
-import util.TODO
+import com.guoxiaoxing.kotlin.demo.util.TODO
 
 class LazyProperty(val initializer: () -> Int) {
     val lazy: Int = todoTask33()

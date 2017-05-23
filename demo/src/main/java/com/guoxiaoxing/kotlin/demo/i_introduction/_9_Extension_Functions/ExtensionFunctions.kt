@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._9_Extension_Functions
 
-import util.TODO
-import util.doc9
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc9
 
 fun String.lastChar() = this.get(this.length - 1)
 

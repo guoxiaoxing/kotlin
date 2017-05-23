@@ -1,7 +1,7 @@
 package v_builders.builders
 
-import util.questions.Answer
-import util.questions.Answer.*
+import com.guoxiaoxing.kotlin.demo.util.questions.Answer
+import com.guoxiaoxing.kotlin.demo.util.questions.Answer.*
 
 fun todoTask40(): Nothing = TODO(
     """

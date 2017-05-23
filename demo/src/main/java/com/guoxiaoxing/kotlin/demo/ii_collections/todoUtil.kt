@@ -1,6 +1,6 @@
 package com.guoxiaoxing.kotlin.demo.ii_collections
 
-import util.TODO
+import com.guoxiaoxing.kotlin.demo.util.TODO
 
 fun todoCollectionTask(): Nothing = TODO(
         """

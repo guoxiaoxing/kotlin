@@ -1,7 +1,7 @@
 package iii_conventions.multiAssignemnt
 
-import util.TODO
-import util.doc30
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc30
 
 fun todoTask30(): Nothing = TODO(
     """

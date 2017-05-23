@@ -1,8 +1,8 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._2_Named_Arguments
 
-import i_introduction._1_Java_To_Kotlin_Converter.task1
-import util.TODO
-import util.doc2
+import com.guoxiaoxing.kotlin.demo.i_introduction._1_Java_To_Kotlin_Converter.task1
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc2
 
 // default values for arguments:
 fun bar(i: Int, s: String = "", b: Boolean = true) {}

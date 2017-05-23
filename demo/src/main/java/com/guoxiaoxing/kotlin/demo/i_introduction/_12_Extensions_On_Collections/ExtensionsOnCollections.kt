@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._12_Extensions_On_Collections
 
-import util.TODO
-import util.doc12
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc12
 
 fun todoTask12(): Nothing = TODO(
     """

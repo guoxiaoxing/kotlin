@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.iii_conventions
 
-import util.TODO
-import util.doc28
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc28
 
 fun iterateOverCollection(collection: Collection<Int>) {
     for (element in collection) {}

@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.i_introduction._8_Smart_Casts
 
-import util.TODO
-import util.doc8
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc8
 
 interface Expr
 class Num(val value: Int) : Expr

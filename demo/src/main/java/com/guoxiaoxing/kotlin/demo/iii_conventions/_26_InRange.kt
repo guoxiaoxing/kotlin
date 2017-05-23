@@ -1,7 +1,7 @@
 package com.guoxiaoxing.kotlin.demo.iii_conventions
 
-import util.TODO
-import util.doc26
+import com.guoxiaoxing.kotlin.demo.util.TODO
+import com.guoxiaoxing.kotlin.demo.util.doc26
 
 fun todoTask26_(): Nothing = TODO(
     """
