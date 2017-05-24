@@ -15,8 +15,8 @@
         android:text="Basic Type" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_class_and_object"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Class and Object" />
 </LinearLayout>
