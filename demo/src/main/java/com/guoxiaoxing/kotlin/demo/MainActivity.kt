@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.guoxiaoxing.kotlin.demo.grammar.BasicTypeActivity
+import com.guoxiaoxing.kotlin.demo.oop.ClassActivity
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         findViewById(R.id.btn_basic_type).setOnClickListener(this)
+        findViewById(R.id.btn_class_and_object).setOnClickListener(this)
     }
 
     override fun onClick(v: View) {

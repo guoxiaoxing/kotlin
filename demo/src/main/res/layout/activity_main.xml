@@ -9,14 +9,15 @@
 
     <Button
         android:id="@+id/btn_basic_type"
-        android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Basic Type" />
+        android:text="Basic Type"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_class_and_object"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Class and Object" />
+        android:text="Class and Object"
+        android:textAllCaps="false" />
 </LinearLayout>
