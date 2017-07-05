@@ -26,7 +26,6 @@ class BasicTypeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun printNumber() {
-
         val oneMillion = 1_000_000
         val creditCardNumber = 1234_5678_9012_3456L
         val socialSecurityNumber = 999_99_9999L
@@ -50,6 +49,5 @@ class BasicTypeActivity : AppCompatActivity(), View.OnClickListener {
         Logger.d("byteArrayOf(1, 2, 3) : " + byteArrayOf(1, 2, 3).size)
         Logger.d("charArrayOf('1', '2', '3') : " + charArrayOf('1', '2', '3').size)
         Logger.d("shortArrayOf(1, 2, 3) : " + shortArrayOf(1, 2, 3).size)
-
     }
 }
