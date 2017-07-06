@@ -33,8 +33,14 @@ class BasicTypeActivity : AppCompatActivity(), View.OnClickListener {
         val bytes = 0b11010010_01101001_10010100_10010010
 
         Logger.d(bytes)
-
         Logger.d("(1 shl 2) and 0x0000FF000) : " + ((1 shl 2) and 0x0000FF000))
+
+        val a: Int = 10000
+        val boxedA1: Int? = a
+        val boxedA2: Int? = a
+
+        Logger.d("boxedA1 ==  boxedA2 " + (boxedA1 ==  boxedA2))
+        Logger.d("boxedA1 ===  boxedA2 " + (boxedA1 ===  boxedA2))
     }
 
     private fun printString() {

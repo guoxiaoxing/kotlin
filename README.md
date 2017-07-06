@@ -47,7 +47,16 @@ Android Stduio 3.0已经正式支持Kotlin，如果你是第一次接触Kotlin�
 
 # 附录
 
+在线资源
+
 - [Kotlin在线编辑器](https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt)
 - [Kotlin in Action](https://www.manning.com/books/kotlin-in-action)
 - [Kotlin for Android Developers](https://leanpub.com/kotlin-for-android-developers)
 - [awesome-kotlin](https://github.com/KotlinBy/awesome-kotlin)
+
+学习小组
+
+- [Beijing Kotlin User Group](http://www.kotliner.cn/)
+- [Shanghai KotlinThree](http://kotlinthree.github.io/)
+- [Chengdu Kotlin User Group](https://www.kotliner.cn/chengdu/)
+- [HeFei Kotlin User Group](http://weibo.com/kotlinhfug)
