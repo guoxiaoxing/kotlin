@@ -40,9 +40,6 @@ Android Stduio 3.0已经正式支持Kotlin，如果你是第一次接触Kotlin�
 
 **Kotlin语法篇**
 
-原本是想写几篇文章简单介绍下Kotlin的语法，后来发现[Kotlin官网中文版](https://www.kotlincn.net/)对英文版的文档翻译的很好，在翻译的基础上
-还提出了自己的理解与总结，非常适合初学者，那Kotlin语法篇的文章我就偷懒不写咯O(∩_∩)O~
-
 - [01Kotlin语法篇：数据类型](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/01Kotlin语法篇：数据类型.md)
 - [02Kotlin语法篇：操作符](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/02Kotlin语法篇：操作符.md])
 - [03Kotlin语法篇：函数](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/03Kotlin语法篇：函数.md)
