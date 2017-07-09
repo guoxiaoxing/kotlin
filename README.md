@@ -52,7 +52,6 @@ Android Stduio 3.0已经正式支持Kotlin，如果你是第一次接触Kotlin�
 [07Kotlin语法篇：反射](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/007Kotlin语法篇：反射.md)
 [08Kotlin语法篇：异常](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/08Kotlin语法篇：异常.md)
 
-
 **Kotlin实践篇**
 
 # 附录
