@@ -2,6 +2,7 @@ package com.guoxiaoxing.kotlin.demo.grammar
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.guoxiaoxing.kotlin.demo.R
 import com.orhanobut.logger.Logger
@@ -46,14 +47,27 @@ class BasicTypeActivity : AppCompatActivity(), View.OnClickListener {
     private fun printString() {
         val text = "abc"
         Logger.d("$text.length is ${text.length}")
+
+        for(c in text){
+            Logger.d(c)
+        }
+
+        Logger.d("text is $text")
+        Logger.d("text is ${text.length}")
     }
 
     private fun printArray() {
-        Logger.d("Array(5, {i -> (i*i).toString()}): " + Array(5, { i -> (i * i).toString() }).size)
 
+        arrayOf(1, 2, '3')
+
+        Logger.d("Array(5, {i -> (i*i).toString()}): " + Array(5, { i -> (i * i).toString() }).size)
         Logger.d("intArrayOf(1, 2, 3) : " + intArrayOf(1, 2, 3).size)
         Logger.d("byteArrayOf(1, 2, 3) : " + byteArrayOf(1, 2, 3).size)
         Logger.d("charArrayOf('1', '2', '3') : " + charArrayOf('1', '2', '3').size)
         Logger.d("shortArrayOf(1, 2, 3) : " + shortArrayOf(1, 2, 3).size)
+
+        Logger.d("arrayOf(1, 2, '3')" +  arrayOf(1, 2, '3'))
+        Logger.d("arrayOf(1, 2, '3')" +  Array(5, {i -> (i * i).toString()}))
+
     }
 }

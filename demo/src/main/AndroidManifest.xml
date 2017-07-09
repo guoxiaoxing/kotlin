@@ -20,7 +20,9 @@
         <activity android:name=".JavaActivity" />
         <activity android:name=".grammar.BasicTypeActivity" />
         <activity android:name=".oop.ClassActivity" />
-        <activity android:name=".grammar.MethodActivity"></activity>
+        <activity android:name=".grammar.MethodActivity" />
+        <activity android:name=".grammar.ControlActivity" />
+        <activity android:name=".oop.OOPActivity"></activity>
     </application>
 
 </manifest>

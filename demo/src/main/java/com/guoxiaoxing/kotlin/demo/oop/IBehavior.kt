@@ -5,13 +5,11 @@ package com.guoxiaoxing.kotlin.demo.oop
  * guoxiaoxingse@163.com.
  *
  * @author guoxiaoxing
- * @since 2017/5/25 上午11:16
+ * @since 2017/7/9 下午3:59
  */
-class GenericClass<T>(t: T) {
+interface IBehavior {
 
-    fun main() {
-
-        val genericClass = GenericClass(1)
+    fun talk() {
+        //可以包含方法体
     }
-
 }

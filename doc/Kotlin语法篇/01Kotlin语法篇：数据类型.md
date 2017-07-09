@@ -28,7 +28,7 @@
 
 Int?或者泛型会对数字进行自动装箱，装箱后的数字保留了相等性，但是没有保留同一性。
 
-```java
+```kotlin
 val a: Int = 10000
 print(a === a) // 输出“true”
 val boxedA: Int? = a
@@ -71,6 +71,23 @@ Kotlin支持数字运算的标准集，它还自己的位运算操作符：
 
 若需要可空引用字符会被装箱，装箱操作不会保留同一性。
 
+## 字符串
+
+字符串用String类型来表示。
+
+```
+//可以使用索引运算符访问
+str[i]
+
+//可以for循环迭代字符串
+for(c in str){
+}
+
+//支持模板表达式
+val a = "abc"
+val s1 = "i + $a"
+val s2 = "i + ${a.length}"
+```
 ## 布尔
 
 布尔用Boolean类型表示，它有true与false两个值，支持布尔运算：
@@ -121,4 +138,26 @@ public class Array<T> {
      */
     public operator fun iterator(): Iterator<T>
 }
+```
+创建方法
+
+```
+//创建一个数组并传递元素值给它
+arrayOf(1, 2, 3)
+
+// 创建一个 Array<String> 初始化为 ["0", "1", "4", "9", "16"]
+val asc = Array(5, { i -> (i * i).toString() })
+```
+
+Kotlin也支持无装箱开销的专门的类来表示原生类型数组：
+
+- ByteArray
+- Shortrray
+- IntArray
+
+它们与Array没有继承关系，但是有相同的方法属性集。
+
+```
+val x: IntArray = intArrayOf(1, 2, 3)
+x[0] = x[1] + x[2]
 ```

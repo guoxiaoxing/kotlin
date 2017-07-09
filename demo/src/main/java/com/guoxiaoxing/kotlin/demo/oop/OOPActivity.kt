@@ -6,24 +6,23 @@ import android.view.View
 import com.guoxiaoxing.kotlin.demo.R
 import com.orhanobut.logger.Logger
 
-class ClassActivity : AppCompatActivity(), View.OnClickListener {
+class OOPActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_class)
+        setContentView(R.layout.activity_oop)
 
-        findViewById(R.id.btn_data_class).setOnClickListener(this)
+        findViewById(R.id.btn_oop_data_class).setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.btn_data_class -> printDataClass()
+            R.id.btn_oop_data_class -> printDataClass()
         }
     }
 
     fun printDataClass() {
-        val dataClass = DataClass("Jack", 30)
-        dataClass.copy(age = 20)
-        Logger.d("The dataClass is : " + dataClass.toString())
+        val model = Model("LiLie", 20)
+        Logger.d(model.toString())
     }
 }
