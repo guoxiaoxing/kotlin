@@ -7,7 +7,7 @@ package com.guoxiaoxing.kotlin.demo.oop
  * @author guoxiaoxing
  * @since 2017/7/9 下午3:39
  */
-class Property {
+class Property{
 
     var a: String
         get() = a

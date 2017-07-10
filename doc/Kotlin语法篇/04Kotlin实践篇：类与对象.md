@@ -202,3 +202,82 @@ data class Model(val name: String, val age: Int)
 - 主构造函数的所有参数需要标记为 val 或 var；
 - 数据类不能是抽象、开放、密封或者内部的；
 - （在1.1之前）数据类只能实现接口。
+
+关于componentN() 函数 
+
+```kotlin
+val model = Model("LiLei", 20)
+val(name, age) = model
+
+Logger.d("name: " + name)
+Logger.d("age: " + age)
+```
+更多关于解构声明的描述可以参见[09Kotlin语法篇：其他特性](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/09Kotlin语法篇：其他特性.md)中关于解构声明的描述
+
+关于copy() 函数
+
+```kotlin
+val model = Model("LiLei", 20)
+val newModel = model.copy(age = 25)
+
+Logger.d("newModel.toString()" + newModel.toString())
+```
+
+### 密封类
+
+### 内部类
+
+定义在类内部的类称为内部类
+
+```
+class Outer {
+    private val a: Int = 1
+
+    inner class Inner {
+        fun print() = a
+    }
+}
+```
+
+当内部类被inner标记时，内部类会持有外部类的一个引用，并可以访问外部类的成员变量，若没有inner标记，则不能访问。
+
+### 枚举类
+
+Kotlin里的每个枚举常量都是一个对象，它们也可以被初始化。
+
+```kotlin
+enum class Color(val rgb: Int) {
+    RED(0xFF0000),
+    GREEN(0xFF0000),
+    BLUE(0xFF0000)
+}
+```
+枚举常量也可以定义自己的匿名类
+
+```kotlin
+enum class State {
+
+    ERROR {
+        override fun signal() = ERROR
+    },
+
+    WARN {
+        override fun signal() = WARN
+    };
+
+    abstract fun signal(): State
+}
+```
+我们还可以通过以下方法获取枚举变量的值
+
+```kotlin
+val color = Color.BLUE
+Logger.d("Color.values(): " + Color.values())
+//枚举名字
+Logger.d("Color.valueOf(\"RED\"): " + Color.valueOf("RED"))
+Logger.d("color: " + color)
+//枚举名字
+Logger.d("color.name: " + color.name)
+//枚举索引
+Logger.d("color.name: " + color.ordinal)
+```

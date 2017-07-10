@@ -2,27 +2,28 @@ package com.guoxiaoxing.kotlin.demo.grammar
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.guoxiaoxing.kotlin.demo.R
 import com.orhanobut.logger.Logger
 
-class BasicTypeActivity : AppCompatActivity(), View.OnClickListener {
+class GrammarActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_basic_type)
+        setContentView(R.layout.activity_grammar)
 
-        findViewById(R.id.btn_number).setOnClickListener(this)
-        findViewById(R.id.btn_string).setOnClickListener(this)
-        findViewById(R.id.btn_array).setOnClickListener(this)
+        findViewById(R.id.btn_grammar_number).setOnClickListener(this)
+        findViewById(R.id.btn_grammar_string).setOnClickListener(this)
+        findViewById(R.id.btn_grammar_array).setOnClickListener(this)
+        findViewById(R.id.btn_grammar_method).setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.btn_number -> printNumber()
-            R.id.btn_string -> printString()
-            R.id.btn_array -> printArray()
+            R.id.btn_grammar_number -> printNumber()
+            R.id.btn_grammar_string -> printString()
+            R.id.btn_grammar_array -> printArray()
+            R.id.btn_grammar_method -> printMethod()
         }
     }
 
@@ -40,15 +41,15 @@ class BasicTypeActivity : AppCompatActivity(), View.OnClickListener {
         val boxedA1: Int? = a
         val boxedA2: Int? = a
 
-        Logger.d("boxedA1 ==  boxedA2 " + (boxedA1 ==  boxedA2))
-        Logger.d("boxedA1 ===  boxedA2 " + (boxedA1 ===  boxedA2))
+        Logger.d("boxedA1 ==  boxedA2 " + (boxedA1 == boxedA2))
+        Logger.d("boxedA1 ===  boxedA2 " + (boxedA1 === boxedA2))
     }
 
     private fun printString() {
         val text = "abc"
         Logger.d("$text.length is ${text.length}")
 
-        for(c in text){
+        for (c in text) {
             Logger.d(c)
         }
 
@@ -66,8 +67,40 @@ class BasicTypeActivity : AppCompatActivity(), View.OnClickListener {
         Logger.d("charArrayOf('1', '2', '3') : " + charArrayOf('1', '2', '3').size)
         Logger.d("shortArrayOf(1, 2, 3) : " + shortArrayOf(1, 2, 3).size)
 
-        Logger.d("arrayOf(1, 2, '3')" +  arrayOf(1, 2, '3'))
-        Logger.d("arrayOf(1, 2, '3')" +  Array(5, {i -> (i * i).toString()}))
+        Logger.d("arrayOf(1, 2, '3')" + arrayOf(1, 2, '3'))
+        Logger.d("arrayOf(1, 2, '3')" + Array(5, { i -> (i * i).toString() }))
 
+    }
+
+    fun sum(a: Int,
+            b: String = "str",
+            c: Boolean = true): String {
+        return a.toString() + b.toString() + c.toString()
+    }
+
+    fun add(vararg ts: Int): Int {
+        var sum = 0
+        for (t in ts) {
+            sum += t
+        }
+        return sum
+    }
+
+    fun outerMethod(a: Int) {
+        val out = 10
+
+        fun innerMethod(b: Int) {
+            val inn = out + 20
+        }
+    }
+
+
+    fun printMethod() {
+
+        Logger.d("sum(1): " + sum(1))
+        Logger.d("sum(1): " + sum(1, c = false))
+        Logger.d("sum(1): " + sum(1, "newStr"))
+
+        Logger.d("add(1, 2, 3, 4): " + add(1, 2, 3, 4))
     }
 }

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.guoxiaoxing.kotlin.demo.grammar.BasicTypeActivity;
+import com.guoxiaoxing.kotlin.demo.grammar.GrammarActivity;
 
 public class JavaActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,8 +18,8 @@ public class JavaActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_basic_type:
-                startActivity(new Intent(JavaActivity.this, BasicTypeActivity.class));
+            case R.id.btn_grammar:
+                startActivity(new Intent(JavaActivity.this, GrammarActivity.class));
                 break;
         }
     }

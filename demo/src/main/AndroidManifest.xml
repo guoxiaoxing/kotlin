@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".KotlinActivity" />
         <activity android:name=".JavaActivity" />
-        <activity android:name=".grammar.BasicTypeActivity" />
+        <activity android:name=".grammar.GrammarActivity" />
         <activity android:name=".oop.ClassActivity" />
         <activity android:name=".grammar.MethodActivity" />
         <activity android:name=".grammar.ControlActivity" />

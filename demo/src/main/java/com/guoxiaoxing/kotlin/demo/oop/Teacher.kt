@@ -8,13 +8,18 @@ package com.guoxiaoxing.kotlin.demo.oop
  * *
  * @since 2017/7/9 下午3:12
  */
-class Teacher(name: String) : Person(name), IBehavior {
-
-    override val age: Int
-        get() = super.age
+class Teacher(val name: String, val age: Int) : Person(name, age), IBehavior {
 
     override fun talk() {
         super<Person>.talk()
         super<IBehavior>.talk()
+    }
+
+    operator fun component1(): Any {
+        return name
+    }
+
+    operator fun component2(): Any {
+        return age
     }
 }

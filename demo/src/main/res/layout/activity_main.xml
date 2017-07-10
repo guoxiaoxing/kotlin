@@ -8,10 +8,10 @@
     tools:context="com.guoxiaoxing.kotlin.demo.KotlinActivity">
 
     <Button
-        android:id="@+id/btn_basic_type"
+        android:id="@+id/btn_grammar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Basic Type"
+        android:text="Grammar"
         android:textAllCaps="false" />
 
     <Button

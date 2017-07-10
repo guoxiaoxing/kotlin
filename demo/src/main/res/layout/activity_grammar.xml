@@ -5,27 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.guoxiaoxing.kotlin.demo.grammar.BasicTypeActivity">
+    tools:context="com.guoxiaoxing.kotlin.demo.grammar.GrammarActivity">
 
     <Button
-        android:id="@+id/btn_number"
+        android:id="@+id/btn_grammar_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Number"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btn_string"
+        android:id="@+id/btn_grammar_string"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="String"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btn_array"
+        android:id="@+id/btn_grammar_array"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Array"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_grammar_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Method"
         android:textAllCaps="false" />
 
 </LinearLayout>
