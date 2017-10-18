@@ -4,22 +4,15 @@
 
 **关于作者**
 
->郭孝星，非著名程序员，主要从事Android平台基础架构与中间件方面的工作，爱好广泛，技术栈主要涉及以下几个方面
->
->- Android/Linux
->- Java/Kotlin/JVM
->- Python
->- JavaScript/React/ReactNative
->- DataStructure/Algorithm
->
->文章首发于[Github](https://github.com/guoxiaoxing)，后续也会同步在[简书](http://www.jianshu.com/users/66a47e04215b/latest_articles)与
-[CSDN](http://blog.csdn.net/allenwells)等博客平台上。文章中如果有什么问题，欢迎发邮件与我交流，邮件可发至guoxiaoxingse@163.com。
+>郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
 官方教程
 
 - [Kotlin官网](https://kotlinlang.org/)
 - [Kotlin官网中文版](https://www.kotlincn.net/)
+- [Kotlin官方论坛](https://discuss.kotlinlang.org/)
 - [Kotlin API](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
+- [Kotlin在线资源库](https://kotlin.link/)
 
 官方插件
 
@@ -38,32 +31,50 @@ Android Stduio 3.0已经正式支持Kotlin，如果你是第一次接触Kotlin�
 
 文章目录
 
-**Kotlin语法篇**
-
-- [01Kotlin语法篇：数据类型](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/01Kotlin语法篇：数据类型.md)
-- [02Kotlin语法篇：操作符](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/02Kotlin语法篇：操作符.md])
-- [03Kotlin语法篇：函数](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/03Kotlin语法篇：函数.md)
-- [04Kotlin语法篇：类与对象](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/04Kotlin语法篇：类与对象.md)
-- [05Kotlin语法篇：集合](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/05Kotlin语法篇：集合.md)
-- [06Kotlin语法篇：注解](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/06Kotlin语法篇：注解.md)
-- [07Kotlin语法篇：反射](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/007Kotlin语法篇：反射.md)
-- [08Kotlin语法篇：异常](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/08Kotlin语法篇：异常.md)
-- [09Kotlin语法篇：其他特性](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin语法篇/09Kotlin语法篇：其他特性.md)
-
-**Kotlin实践篇**
+- 01Kotlin实践指南：基础语法
+- 02Kotlin实践指南：类型系统
+- 03Kotlin实践指南：泛型
+- 04Kotlin实践指南：注解与反射
+- 05Kotlin实践指南：Lambda与高阶函数
+- 06Kotlin实践指南：DSL构建
 
 # 附录
 
-在线资源
+Kotlin生态系统
 
-- [Kotlin在线编辑器](https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt)
-- [Kotlin in Action](https://www.manning.com/books/kotlin-in-action)
-- [Kotlin for Android Developers](https://leanpub.com/kotlin-for-android-developers)
-- [awesome-kotlin](https://github.com/KotlinBy/awesome-kotlin)
+>Kotlin与整个Java生态系统完全兼容，也就是说你在搜寻解决方案时，现有的Java类库完全可以被使用，除此之外，纯Kotlin的类库也在欣欣向荣的发展。
 
-学习小组
+注：下方没有给出链接的是大家所熟知的各个领域的Java第三方库，而给出链接的则是由纯Kotlin实现的第三方库。
 
-- [Beijing Kotlin User Group](http://www.kotliner.cn/)
-- [Shanghai KotlinThree](http://kotlinthree.github.io/)
-- [Chengdu Kotlin User Group](https://www.kotliner.cn/chengdu/)
-- [HeFei Kotlin User Group](http://weibo.com/kotlinhfug)
+测试
+
+- JUnit
+- TestNG
+- [kotlintest](https://github.com/kotlintest/kotlintest): Kotlin test framework based on the excellent Scalatest
+- [spek](https://github.com/spekframework/spek): A specification framework for Kotlin
+- [hamkrest](https://github.com/npryce/hamkrest): A reimplementation of Hamcrest to take advantage of Kotlin language features.
+- [mockito-kotlin](https://github.com/nhaarman/mockito-kotlin): A small library that provides helper functions to work with Mockito in Kotlin.
+
+依赖注入
+
+- Dagger
+- [Kodein](https://github.com/SalomonBrys/Kodein): Kodein is a very simple and yet very useful dependency retrieval container. it is very easy to use and configure.
+
+序列化
+
+- Jackson
+- [jackson-module-kotlin](https://github.com/FasterXML/jackson-module-kotlin): Module that adds support for serialization/deserialization of Kotlin (http://kotlinlang.org) classes and data classes.
+- Gson
+- [Kotson](https://github.com/SalomonBrys/Kotson): Kotlin bindings for JSON manipulation via Gson
+
+网络请求
+
+- Okhttp
+- Retrofit
+- [Fuel](https://github.com/kittinunf/Fuel): The easiest HTTP networking library for Kotlin/Android
+
+响应式编程
+
+- RxJava
+- RxAndroid
+- [RxKotlin](https://github.com/ReactiveX/RxKotlin): RxJava bindings for Kotlin
