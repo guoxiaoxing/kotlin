@@ -1,7 +1,8 @@
-package com.guoxiaoxing.kotlin.demo.grammar
+package com.guoxiaoxing.kotlin.demo._01_grammar
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.annotation.IntegerRes
 import android.view.View
 import com.guoxiaoxing.kotlin.demo.R
 import com.orhanobut.logger.Logger
@@ -12,20 +13,82 @@ class GrammarActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grammar)
 
-        findViewById(R.id.btn_grammar_number).setOnClickListener(this)
+        findViewById(R.id.btn_grammar_method).setOnClickListener(this)
+        findViewById(R.id.btn_grammar_variable).setOnClickListener(this)
         findViewById(R.id.btn_grammar_string).setOnClickListener(this)
         findViewById(R.id.btn_grammar_array).setOnClickListener(this)
-        findViewById(R.id.btn_grammar_method).setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.btn_grammar_number -> printNumber()
+            R.id.btn_grammar_method -> printMethod()
+            R.id.btn_grammar_variable -> printVariable()
             R.id.btn_grammar_string -> printString()
             R.id.btn_grammar_array -> printArray()
-            R.id.btn_grammar_method -> printMethod()
         }
     }
+
+    /******************************************* 函数 **************************************************/
+
+
+    fun max(a: Int, b: Int): Int {
+        return if (a > b) a else b
+    }
+
+
+    fun printMethod() {
+        Logger.d("sum(1): " + sum(1))
+        Logger.d("sum(1): " + sum(1, c = false))
+        Logger.d("sum(1): " + sum(1, "newStr"))
+
+        Logger.d("add(1, 2, 3, 4): " + add(1, 2, 3, 4))
+    }
+
+
+    /******************************************* 变量 **************************************************/
+
+    fun printVariable() {
+        val message: String
+
+        if (true) {
+            message = "true"
+        } else {
+            message = "false"
+        }
+
+        Logger.d("printVariable(): " + message)
+    }
+
+
+    /******************************************* 属性 **************************************************/
+
+
+    /***************************************** 控制语句 *************************************************/
+
+    fun printControl() {
+
+        val a = 1
+        val b = 2
+
+        val ifResult = if (a > b) a else b
+
+        val whenResult = when (a > b) {
+            true -> a
+            else -> b
+        }
+
+        val number = try {
+            Integer.parseInt("1")
+        } catch (e: NumberFormatException) {
+            null
+        }
+
+
+        for (i: Int in 1..100){
+            Logger.d(i)
+        }
+    }
+
 
     private fun printNumber() {
         val oneMillion = 1_000_000
@@ -95,12 +158,4 @@ class GrammarActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    fun printMethod() {
-
-        Logger.d("sum(1): " + sum(1))
-        Logger.d("sum(1): " + sum(1, c = false))
-        Logger.d("sum(1): " + sum(1, "newStr"))
-
-        Logger.d("add(1, 2, 3, 4): " + add(1, 2, 3, 4))
-    }
 }

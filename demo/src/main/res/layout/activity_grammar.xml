@@ -5,13 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.guoxiaoxing.kotlin.demo.grammar.GrammarActivity">
+    tools:context="com.guoxiaoxing.kotlin.demo._01_grammar.GrammarActivity">
 
     <Button
-        android:id="@+id/btn_grammar_number"
+        android:id="@+id/btn_grammar_method"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Number"
+        android:text="函数"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_grammar_variable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="变量"
         android:textAllCaps="false" />
 
     <Button
@@ -26,13 +33,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Array"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_grammar_method"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Method"
         android:textAllCaps="false" />
 
 </LinearLayout>

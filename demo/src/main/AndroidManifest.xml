@@ -18,10 +18,10 @@
         </activity>
         <activity android:name=".KotlinActivity" />
         <activity android:name=".JavaActivity" />
-        <activity android:name=".grammar.GrammarActivity" />
+        <activity android:name="._01_grammar.GrammarActivity" />
         <activity android:name=".oop.ClassActivity" />
-        <activity android:name=".grammar.MethodActivity" />
-        <activity android:name=".grammar.ControlActivity" />
+        <activity android:name="._01_grammar.MethodActivity" />
+        <activity android:name="._01_grammar.ControlActivity" />
         <activity android:name=".oop.OOPActivity"></activity>
     </application>
 

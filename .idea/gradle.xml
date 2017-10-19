@@ -9,7 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/demo" />
-            <option value="$PROJECT_DIR$/eyepetizer" />
             <option value="$PROJECT_DIR$/library" />
           </set>
         </option>

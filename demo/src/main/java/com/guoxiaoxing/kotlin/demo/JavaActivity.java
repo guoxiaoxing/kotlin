@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.guoxiaoxing.kotlin.demo.grammar.GrammarActivity;
+import com.guoxiaoxing.kotlin.demo._01_grammar.GrammarActivity;
 
 public class JavaActivity extends AppCompatActivity implements View.OnClickListener{
 

@@ -1,1 +1,1 @@
-include ':demo', ':library', ':eyepetizer'
+include ':demo', ':library'
