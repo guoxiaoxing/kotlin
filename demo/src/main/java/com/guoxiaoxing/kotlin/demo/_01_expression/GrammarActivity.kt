@@ -1,8 +1,7 @@
-package com.guoxiaoxing.kotlin.demo._01_grammar
+package com.guoxiaoxing.kotlin.demo._01_expression
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.annotation.IntegerRes
 import android.view.View
 import com.guoxiaoxing.kotlin.demo.R
 import com.orhanobut.logger.Logger

@@ -17,12 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".KotlinActivity" />
-        <activity android:name=".JavaActivity" />
-        <activity android:name="._01_grammar.GrammarActivity" />
+        <activity android:name="._01_expression.GrammarActivity" />
         <activity android:name=".oop.ClassActivity" />
-        <activity android:name="._01_grammar.MethodActivity" />
-        <activity android:name="._01_grammar.ControlActivity" />
-        <activity android:name=".oop.OOPActivity"></activity>
+        <activity android:name="._01_expression.MethodActivity" />
+        <activity android:name="._01_expression.ControlActivity" />
+        <activity android:name=".oop.OOPActivity" />
+        <activity android:name="._02_method.MethodActivity"></activity>
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.guoxiaoxing.kotlin.demo._01_grammar.GrammarActivity
+import com.guoxiaoxing.kotlin.demo._01_expression.GrammarActivity
 import com.guoxiaoxing.kotlin.demo.oop.OOPActivity
 
 

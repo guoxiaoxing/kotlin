@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kotlin.demo._01_grammar
+package com.guoxiaoxing.kotlin.demo._01_expression
 
 /**
  * For more information, you can visit https://github.com/guoxiaoxing or contact me by

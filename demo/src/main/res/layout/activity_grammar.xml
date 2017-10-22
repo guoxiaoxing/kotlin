@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.guoxiaoxing.kotlin.demo._01_grammar.GrammarActivity">
+    tools:context="com.guoxiaoxing.kotlin.demo._01_expression.GrammarActivity">
 
     <Button
         android:id="@+id/btn_grammar_method"
