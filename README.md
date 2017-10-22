@@ -17,6 +17,7 @@
 书籍推荐
 
 - [Kotlin in Action](https://panxl6.gitbooks.io/kotlin-in-action-in-chinese/content/welcome.html)
+- [Kotlin for android developers](https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/guan_yu_ben_shu.html)
 
 官方插件
 
