@@ -35,7 +35,7 @@ Android Stduio 3.0已经正式支持Kotlin，如果你是第一次接触Kotlin�
 
 文章目录
 
-- [Kotlin项目实践指南(上)]()
+- [Kotlin项目实践指南(上)](https://github.com/guoxiaoxing/kotlin/blob/master/doc/Kotlin项目实践指南(上).md)
 - Kotlin项目实践指南(下)
 
 练手项目
