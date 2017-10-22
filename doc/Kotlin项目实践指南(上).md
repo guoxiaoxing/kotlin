@@ -574,8 +574,8 @@ Anke是一个Android开发的工具库，它可以通过Anko DSL代码书写代�
 - 良好的版本兼容性，运行时权限等内容都做了兼容性处理。
 
 <p align="center">
-<img src="https://github.com/guoxiaoxing/phoenix/raw/master/art/play_compress_1.gif" height="400"/>
-<img src="https://github.com/guoxiaoxing/phoenix/raw/master/art/play_compress_2.gif" height="400"/>
+<img src="https://github.com/guoxiaoxing/phoenix/raw/master/art/play_1.gif" height="400"/>
+<img src="https://github.com/guoxiaoxing/phoenix/raw/master/art/play_2.gif" height="400"/>
 </p>
 
 **功能**
@@ -629,40 +629,34 @@ allprojects {
 
 ```
 //图片/视频选择、拍照、图片/视频预览
-compile 'com.github.guoxiaoxing.phoenix:phoenix-ui:0.0.7'
+compile 'com.github.guoxiaoxing.phoenix:phoenix-ui:0.0.11'
 
 //选填 - 图片压缩，开启功能：Phoenix.with().enableCompress(true)，获取结果：MediaEntity.getCompressPath()
-compile 'com.github.guoxiaoxing.phoenix:phoenix-compress-picture:0.0.7'
+compile 'com.github.guoxiaoxing.phoenix:phoenix-compress-picture:0.0.11'
 
 //选填 - 视频压缩，开启功能：Phoenix.with().enableCompress(true)，获取结果：MediaEntity.getCompressPath()
-compile 'com.github.guoxiaoxing.phoenix:phoenix-compress-video:0.0.7'
+compile 'com.github.guoxiaoxing.phoenix:phoenix-compress-video:0.0.11'
 ```
 
 ### 调用功能
 
 ```java
 Phoenix.with()
-        .theme(PhoenixOption.THEME_DEFAULT )// 主题样式
+        .theme(PhoenixOption.THEME_DEFAULT )// 主题样式设置 具体参考 values/styles   用法：R.style.picture.white.style
         .fileType(MimeType.ofAll())
-        .maxSelectNum(10)// 最大图片选择数量
-        .minSelectNum(0)// 最小选择数量
+        .maxPickNumber(10)// 最大图片选择数量
+        .minPickNumber(0)// 最小选择数量
         .spanCount(4)// 每行显示个数
         .pickMode(PhoenixConstant.MULTIPLE)// 多选 or 单选
         .enablePreview(true)// 是否可预览图片
         .enableCamera(true)// 是否显示拍照按钮
-        .zoomAnim(true)// 图片列表点击 缩放效果 默认true
+        .enableAnimation(true)// 图片列表点击 缩放效果 默认true
         .enableCompress(true)// 是否压缩
-        .overrideHeight(160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
-        .overrideWidth(160)
-        .enableGif(true)// 是否显示gif图片
+        .thumbnailHeight(160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+        .thumbnailWidth(160)
         .enableClickSound(true)//ƒ 是否开启点击声音
         .pickedMediaList(pickList)// 是否传入已选图片
-        .previewEggs(false)// 预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中)
-        .compressMaxSize(10 * 1000)//压缩最大值kb compressGrade()为Luban.CUSTOM_GEAR有效
-        .compressMaxHeight(500)
-        .compressMaxWidth(300)
         .videoSecond(0)//显示多少秒以内的视频or音频也可适用
-        .recordVideoSecond(2 * 60)//录制视频秒数 默认60s
         .onPickerListener(new OnPickerListener() {
             @Override
             public void onPickSuccess(List<MediaEntity> pickList) {
