@@ -5,11 +5,7 @@ package com.guoxiaoxing.kotlin.demo._03_class
  * guoxiaoxingse@163.com.
  *
  * @author guoxiaoxing
- * @since 2017/10/22 下午12:08
+ * @since 2017/10/22 下午2:40
  */
-open class BaseClass {
-
-    open fun extendClass() {
-
-    }
+object Single {
 }

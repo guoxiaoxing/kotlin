@@ -9,5 +9,7 @@ package com.guoxiaoxing.kotlin.demo._03_class
  */
 interface BaseInterface {
 
+    val name: String
+
     fun implementInterface()
 }

@@ -1,4 +1,4 @@
-# Kotlin实指指南：基础语法
+# Kotlin项目实践指南(上)
 
 **关于作者**
 
@@ -9,9 +9,7 @@
 - 一 表达式与语句
 - 二 函数和变量
 - 三 类、对象和接口
-- 四 泛型
-- 五 注解与反射
-- 六 项目实践
+- 四 项目实践
 
 注：文章中"举例"字样代表所举的例子，"区别"字样代码Kotlin与Java不同的地方，
 
@@ -26,7 +24,22 @@
 - Kotlin支持函数式和面向对象两种编程风格，通过头等函数使得更高级别的抽象成为了可能，通过支持不可变值简化了测试和多线程并发。
 - Kotlin与Java具有良好的互操作性，Kotlin可以去使用Java的API、继承Java的类型、实现Java的接口，同样的，Java也可以像调用其他Java代码那样调用Kotlin，这为语言混用打下了坚实的基础。
 
-## 一 表达式与语句
+写在前面的总结，从Java过度到Kotlin，有哪些被替换的地方。🤔
+
+- 1. 用Kotlin的顶层函数和顶层属性代替Java里一堆堆的Utils工具类的写法
+- 2. 用Kotlin的data数据类代替Java里的Bean类里的大量模板代码
+- 3. 用object对象代替Java里的匿名内部类
+- 4. 用companion object代替Java里的静态方法和静态变量的调用，这种用来需要访问类的private成员的情况，其他情况还是可以用顶层函数和顶层属性。
+- 5. 类和方法默认都是final的
+- 6. 
+
+Android Stduio 3.0已经正式支持Kotlin，如果你是第一次接触Kotlin，你可以看一下下面3篇文章，跑一下Demo，体会一下Kotlin。
+
+- [Gradle Config for Kotlin in Android](https://kotlinlang.org/docs/reference/using-gradle.html)
+- [Get Started with Kotlin on Android]( https://developer.android.com/kotlin/get-started.html)
+- [Using Kotlin for Android Development](https://kotlinlang.org/docs/reference/android-overview.html)
+
+## 一 表达式与运算符
 
 ### 1.1 控制表达式
 
@@ -83,6 +96,12 @@ for((key, value) in map){
 //变量 a 和 b 的值取自对集合中的元素上调用 component1() 和 component2() 的返回值。
 for ((a, b) in collection) { …… }
 ```
+
+## 运算符
+
+- ==：调用的是对象的equals()方法进行想等性比较。
+- ===：进行对象引用的比较，这和Java的==相似。
+- is：类似于Java的Instanceof，用于类型检查，而且当检查类型成功后，会自动将变量转换为这个类型。
 
 ### 1.2 中缀调用
 
@@ -294,6 +313,7 @@ Kotlin中也有和Java中相似的类与接口的概念，但是有所区别🤔
 - Kotlin中也有抽象类的概念，使用abstract关键字标记。
 - 接口可以定义自己的成员变量，也可以为定义的方法提供默认的实现。
 
+
 访问修饰符
 
 - final：不能被重写
@@ -308,6 +328,62 @@ Kotlin中也有和Java中相似的类与接口的概念，但是有所区别🤔
 得到访问你的包私有声明的权限。
 - protected：子类中可见，Java中可以从同一个包中访问protected成员，Kotlin彻底规范了这个行为，只能在子类中可见。
 - private：类中可见
+
+```kotlin
+open class BaseClass {
+
+    open fun extendClass() {
+
+    }
+}
+
+interface BaseInterface {
+
+    val name: String
+
+    fun implementInterface()
+}
+
+class Clasz(override val name: String) : BaseClass(), BaseInterface {
+
+    override fun extendClass() {
+        println("I override the BaseClass")
+    }
+
+
+    override fun implementInterface() {
+        println("I implment the BaseInterface")
+    }
+}
+```
+
+构造方法
+
+Kotlin里的构造方法分为主构造函数和从构造方法，主构造函数是类头的一部分，它跟在类名后，类初始化的代码可以放在init代码块里完成。Kotlin也支持参数默认值，所以我们无需像Java那样提供多个重载的构造方法来提供参数默认值。
+
+- 如同Java一样，Kotlin也会提供一个没有任何参数的构造方法，这也是我们在继承类的时候会在类后面加一个空的括号，这表示调用父类的构造方法。
+- 如果类有一个主构造函数，每个次构造函数需要委托给主构造函数， 可以直接委托或者通过别的次构造函数间接委托。委托到同一个类的另一个构造函数用 this 关键字即可。
+
+```kotlin
+class Clasz(override val name: String){
+
+    /**************************************** 构造方法与初始化 *********************************************/
+
+    init {
+        //TODO 初始化类，在类创建时被调用
+    }
+
+    /**
+     * 从构造函数
+     *
+     * 如果类有一个主构造函数，每个次构造函数需要委托给主构造函数， 可以直接委托或者通过别
+     * 的次构造函数间接委托。委托到同一个类的另一个构造函数用 this 关键字即可
+     */
+    constructor(name: String, age: Int) : this(name) {
+        println("I am a secondary constructor")
+    }
+}
+```
 
 ## 3.1 嵌套类与内部类
 
@@ -342,198 +418,128 @@ class Clasz {
 }
 ```
 
-## 四 泛型
+## 3.2 数据类
 
-## 五 注解与反射
-
-## 六 项目实践
-
-## 数字
-
-|Type	|Bit width|
-|:------|:--------|
-|Double	|64
-|Float	|32
-|Long	|64
-|Int	|32
-|Short	|16
-|Byte	|8
-
-Int?或者泛型会对数字进行自动装箱，装箱后的数字保留了相等性，但是没有保留同一性。
+在Java中我们会用到协议只保存数据的类，我们呀为它们写大量重复的方法，在Kotlin只需要用用data关键字标记。
 
 ```kotlin
-val a: Int = 10000
-print(a === a) // 输出“true”
-val boxedA: Int? = a
-val anotherBoxedA: Int? = a
-print(boxedA == anotherBoxedA) // 输出“true”
-print(boxedA === anotherBoxedA) // ！！！输出“false”！！！
+data class Model(val name: String)
 ```
-数字类型不支持隐式转换，每个数字类型都支持如下显式转换：
 
-- toByte(): Byte
-- toShort(): Short
-- toInt(): Int
-- toLong(): Long
-- toFloat(): Float
-- toDouble(): Double
-toChar(): Char
+就这么简单的一行代码，你将得到：
 
-Kotlin支持数字运算的标准集，它还自己的位运算操作符：
+- equals()/hashCode() 
+- toString() 格式是 "Model(name=John, age=42)
+- componentN() 函数 按声明顺序对应于所有属性，
+- copy() 函数
 
-- shl(bits) – 有符号左移 (Java 的 <<)
-- shr(bits) – 有符号右移 (Java 的 >>)
-- ushr(bits) – 无符号右移 (Java 的 >>>)
-- and(bits) – 位与
-- or(bits) – 位或
-- xor(bits) – 位异或
-- inv() – 位非
+为了保证数据类的一致性，数据类必须满足：
 
-## 字符
+- 主构造函数需要至少有一个参数；
+- 主构造函数的所有参数需要标记为 val 或 var；
+- 数据类不能是抽象、开放、密封或者内部的；
+- （在1.1之前）数据类只能实现接口。
 
-字符用Char表示，它们不能直接当做数字，可以调用上述方法进行显示转换。值用''括起来。支持转义序列：
+## 3.3 object对象
 
-- \t
-- \b
-- \n
-- \r
-- \'
-- \"
-- \\
-- \$
+>Kotlin没有static的概念，但是提供了object关键字，它代表了在创建一个类的同时并提供一个对象。
 
-若需要可空引用字符会被装箱，装箱操作不会保留同一性。
+object关键字通常用在：
 
-## 字符串
-
-字符串用String类型来表示。
-
-```
-//可以使用索引运算符访问
-str[i]
-
-//可以for循环迭代字符串
-for(c in str){
-}
-
-//支持模板表达式
-val a = "abc"
-val s1 = "i + $a"
-val s2 = "i + ${a.length}"
-```
-## 布尔
-
-布尔用Boolean类型表示，它有true与false两个值，支持布尔运算：
-
-- || – 短路逻辑或
-- && – 短路逻辑与
-- ! - 逻辑非
-
-若需要可空引用布尔会被装箱，装箱操作不会保留同一性。
-
-## 数组
-
-数组用Array表示，它定义了如下函数：
+- object表达式实现单例
+- object表达式用来代替Java的匿名内部类，注意匿名对象不是单例的，每次执行代码，都会创建一个新的对象。
+- object对象也可以继承自类和接口
+- object对象会被编译成静态字段，如果使用Java调用，可以通过objectName.INSTANCE的方式进行调用。
 
 ```kotlin
-public class Array<T> {
-    /**
-     * Creates a new array with the specified [size], where each element is calculated by calling the specified
-     * [init] function. The [init] function returns an array element given its index.
-     */
-    public inline constructor(size: Int, init: (Int) -> T)
+object Single {
 
-    /**
-     * Returns the array element at the specified [index]. This method can be called using the
-     * index operator:
-     * ```
-     * value = arr[index]
-     * ```
-     */
-    public operator fun get(index: Int): T
-
-    /**
-     * Sets the array element at the specified [index] to the specified [value]. This method can
-     * be called using the index operator:
-     * ```
-     * arr[index] = value
-     * ```
-     */
-    public operator fun set(index: Int, value: T): Unit
-
-    /**
-     * Returns the number of elements in the array.
-     */
-    public val size: Int
-
-    /**
-     * Creates an iterator for iterating over the elements of the array.
-     */
-    public operator fun iterator(): Iterator<T>
 }
 ```
-创建方法
-
-```
-//创建一个数组并传递元素值给它
-arrayOf(1, 2, 3)
-
-// 创建一个 Array<String> 初始化为 ["0", "1", "4", "9", "16"]
-val asc = Array(5, { i -> (i * i).toString() })
-```
-
-Kotlin也支持无装箱开销的专门的类来表示原生类型数组：
-
-- ByteArray
-- Shortrray
-- IntArray
-
-它们与Array没有继承关系，但是有相同的方法属性集。
-
-```
-val x: IntArray = intArrayOf(1, 2, 3)
-x[0] = x[1] + x[2]
-```
-
-## 解构声明
-
-
-
-### for循环解构
-
-解构声明还可以用在for循环中：
 
 ```kotlin
-、、
-//变量 a 和 b 的值取自对集合中的元素上调用 component1() 和 component2() 的返回值。
-for ((a, b) in collection) { …… }
+/**
+ * 匿名内部类
+ */
+view.setOnClickListener(object : View.OnClickListener{
+        override fun onClick(v: View?) {
+        }
+    })
 ```
 
-遍历Map我们也有了更简单的方式：
+另外还有一种companion object（伴生对象），伴生对象是一种声明在类中的普通对象，它也可以有自己的名字，实现一个接口或者有扩展函数和属性。
+
+Kotlin的伴生对象会被编译成常见静态字段，可以通过ClassName.Companion来访问它，如果伴生对象有名字，则用这个名字替换掉Companion。
 
 ```kotlin
-for((key, value) in map){
-````//使用key，value
+class Singleton {
+
+    /**
+     * 单例
+     */
+    companion object {
+        val instance by lazy { Singleton() }
+    }
 }
 ```
-标准库为了我们实现了扩展
 
-- 通过提供一个 iterator() 函数将映射表示为一个值的序列，
-- 通过提供函数 component1() 和 component2() 来将每个元素呈现为一对。
+## 四 项目实践
 
-```kotlin
-operator fun <K, V> Map<K, V>.iterator(): Iterator<Map.Entry<K, V>> = entrySet().iterator()
-operator fun <K, V> Map.Entry<K, V>.component1() = getKey()
-operator fun <K, V> Map.Entry<K, V>.component2() = getValue()
+如果你还没有尝试过Kotlin，Android Stduio 3.0已经正式支持Kotlin，如果你是第一次接触Kotlin，你可以看一下下面3篇文章，跑一下Demo，体会一下Kotlin。
+
+- [Gradle Config for Kotlin in Android](https://kotlinlang.org/docs/reference/using-gradle.html)
+- [Get Started with Kotlin on Android]( https://developer.android.com/kotlin/get-started.html)
+- [Using Kotlin for Android Development](https://kotlinlang.org/docs/reference/android-overview.html)
+
+### 4.1 findViewById
+
+利用kotlin-android-extensions，我们可以直接使用xml文件里的文件id，和findViewById说再见。
+
+注：目前只能在Activity、Fragment、Adapter上使用。
+
+依赖配置
 
 ```
-### lambda表达式解构
+apply plugin: 'kotlin-android-extensions'
+```
 
-我们可以对lambda表达式参数使用解构声明语法。
+导入属性
 
 ```kotlin
-{ a //-> …… } // 一个参数
-{ a, b //-> …… } // 两个参数
-{ (a, b) //-> …… } // 一个解构对
-{ (a, b), c //-> …… } // 一个解构对以及其他参数
+// 使用来自主代码集的 R.layout.activity_main
+import kotlinx.android.synthetic.main.activity_main.*
+
+// 如果是Adapter则在后面多加个View R.layout.adapter_layout
+import kotlinx.android.synthetic.main.adapter_layout.view.*
+
+class MyActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        textView.setText("Hello, world!")
+        // 而不是 findViewById(R.id.textView) as TextView
+    }
+}
 ```
+
+更多细节：https://kotlinlang.org/docs/tutorials/android-plugin.html
+
+### 4.2 Anko
+
+Anke是一个Android开发的工具库，它可以通过Anko DSL代码书写代替XML来进行UI布局。这是一个非常有效的特性，当然它也有许多有用的functions，可以大大提升我们的开发效率。
+
+例如：
+
+- find()代替findViewById()
+- longToast()代替原生Toast()
+- startActivity(vararg params: Pair<String, Any>代替原生startActivity()
+- Anko SQLite简化原生的SQLite的使用
+
+更多细节：https://github.com/Kotlin/anko
+
+
+
+以上就是本篇文章上半部分的全部内容，下半部分我们回来深入探讨泛型、注解、反射、Kotlin类型系统、Lambda与高阶函数以及DSL构建等方面的内容。
+
+
+************************************************************我是Kotlin项目的分割线😆************************************************************

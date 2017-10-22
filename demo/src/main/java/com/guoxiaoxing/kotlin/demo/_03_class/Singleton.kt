@@ -5,11 +5,14 @@ package com.guoxiaoxing.kotlin.demo._03_class
  * guoxiaoxingse@163.com.
  *
  * @author guoxiaoxing
- * @since 2017/10/22 下午12:08
+ * @since 2017/10/22 下午2:21
  */
-open class BaseClass {
+class Singleton {
 
-    open fun extendClass() {
-
+    /**
+     * 单例
+     */
+    companion object {
+        val instance by lazy { Singleton() }
     }
 }

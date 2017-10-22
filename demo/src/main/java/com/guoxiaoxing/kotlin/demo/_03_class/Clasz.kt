@@ -1,5 +1,9 @@
 package com.guoxiaoxing.kotlin.demo._03_class
 
+import android.content.Context
+import android.view.View
+import android.widget.ImageView
+
 /**
  * For more information, you can visit https://github.com/guoxiaoxing or contact me by
  * guoxiaoxingse@163.com.
@@ -7,7 +11,7 @@ package com.guoxiaoxing.kotlin.demo._03_class
  * @author guoxiaoxing
  * @since 2017/10/22 上午11:58
  */
-class Clasz(val name: String) : BaseClass(), BaseInterface {
+class Clasz(override val name: String) : BaseClass(), BaseInterface {
 
     private var outerProperty = "I am a outer property"
 
@@ -17,14 +21,24 @@ class Clasz(val name: String) : BaseClass(), BaseInterface {
         //TODO 初始化类，在类创建时被调用
     }
 
+    /**
+     * 从构造函数
+     *
+     * 如果类有一个主构造函数，每个次构造函数需要委托给主构造函数， 可以直接委托或者通过别
+     * 的次构造函数间接委托。委托到同一个类的另一个构造函数用 this 关键字即可
+     */
+    constructor(name: String, age: Int) : this(name) {
+        println("I am a secondary constructor")
+    }
+
+    override fun extendClass() {
+        println("I override the BaseClass")
+    }
+
+
     override fun implementInterface() {
-        TODO("not implemented")
+        println("I implment the BaseInterface")
     }
-
-    override fun useAbstractClass() {
-        TODO("not implemented")
-    }
-
 
     /**************************************** 嵌套类与内部类 ***********************************************/
 
@@ -45,5 +59,14 @@ class Clasz(val name: String) : BaseClass(), BaseInterface {
         fun nestMethod() {
             outerProperty = "I cam use outerProperty"
         }
+    }
+
+    /***************************************** 匿名内部类 **************************************************/
+
+    fun useAnonymousInnerClass(){
+//        view.setOnClickListener(object : View.OnClickListener{
+//            override fun onClick(v: View?) {
+//            }
+//        })
     }
 }
