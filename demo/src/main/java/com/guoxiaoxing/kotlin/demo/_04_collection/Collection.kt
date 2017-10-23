@@ -1,4 +1,4 @@
-package com.guoxiaoxing.kotlin.demo._04_generics
+package com.guoxiaoxing.kotlin.demo._04_collection
 
 /**
  * For more information, you can visit https://github.com/guoxiaoxing or contact me by
@@ -7,7 +7,7 @@ package com.guoxiaoxing.kotlin.demo._04_generics
  * @author guoxiaoxing
  * @since 2017/10/22 下午2:57
  */
-class Generics {
+class Collection {
 
 
 }
